@@ -1,0 +1,21 @@
+{% extends 'main/layout.html' %}  {# добавляет расширения из layout #}
+
+{% block title %}Новости на сайте{% endblock%}
+
+{% block content%}
+    <div class="features">
+        <h1>Новости на сайте</h1>
+        {% if news %}
+            {% for el in news %}
+                <div class="alert alert-warning">
+                    <h3>{{ el.title }}</h3>
+                    <p>{{ el.anons }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <h4>У вас нет записей!!!</h4>
+        {% endif %}
+
+        {# if выводит список из статей, если их нет то пишет нет записей #}
+    </div>
+{% endblock%}
